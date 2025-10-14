@@ -104,7 +104,7 @@ function Medicines() {
               <span className="detail">Pack Size: {medicine.packSize}</span>
             </div>
             <div className="medicine-footer">
-              <span className="price">${medicine.price.toFixed(2)}</span>
+              <span className="price">₹{medicine.price.toFixed(2)}</span>
               <button
                 className="add-to-cart-btn"
                 onClick={() => addToCart(medicine)}

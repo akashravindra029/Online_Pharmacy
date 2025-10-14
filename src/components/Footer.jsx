@@ -30,13 +30,13 @@ function Footer() {
         <div className="footer-section">
           <h3>Contact Us</h3>
           <p><strong>Phone:</strong> 9666989458</p>
-          <p><strong>Email:</strong> info@hynopharmacy.com</p>
+          <p><strong>Email:</strong> info@hynopharma.com</p>
           <p><strong>Address:</strong> Near Kadugodi Tree Park, Prashanth Extension, Whitefield, Bangalore-560066</p>
           <p><strong>Hours:</strong> Mon-Sun: 9AM-9PM</p>
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2025 HynoPharmacy | All rights reserved. | Powered by HynoPharma</p>
+        <p>© 2025 HynoPharma | All rights reserved. | Powered by HynoPharma</p>
       </div>
     </footer>
   );

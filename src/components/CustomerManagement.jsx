@@ -5,6 +5,8 @@ function CustomerManagement() {
   const [customers, setCustomers] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState('name');
+  const [selectedCustomer, setSelectedCustomer] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     try {
@@ -146,8 +148,8 @@ function CustomerManagement() {
                   <button
                     className="view-orders-btn"
                     onClick={() => {
-                      // Could implement a modal to show customer order history
-                      alert(`View order history for ${customer.name}`);
+                      setSelectedCustomer(customer);
+                      setShowModal(true);
                     }}
                   >
                     View Orders
@@ -162,6 +164,45 @@ function CustomerManagement() {
       {filteredCustomers.length === 0 && (
         <div className="no-customers">
           <p>No customers found matching your criteria.</p>
+        </div>
+      )}
+
+      {showModal && selectedCustomer && (
+        <div className="modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3>Order History for {selectedCustomer.name}</h3>
+              <button className="close-btn" onClick={() => setShowModal(false)}>×</button>
+            </div>
+            <div className="modal-body">
+              <div className="customer-info">
+                <p><strong>Email:</strong> {selectedCustomer.email}</p>
+                <p><strong>Phone:</strong> {selectedCustomer.phone}</p>
+                <p><strong>Total Orders:</strong> {selectedCustomer.totalOrders}</p>
+                <p><strong>Total Spent:</strong> ₹{selectedCustomer.totalSpent.toFixed(2)}</p>
+              </div>
+              <div className="orders-list">
+                <h4>Orders:</h4>
+                {selectedCustomer.orders.map((order, index) => (
+                  <div key={index} className="order-item">
+                    <div className="order-header">
+                      <span><strong>Order ID:</strong> {order.id || `Order ${index + 1}`}</span>
+                      <span><strong>Date:</strong> {new Date(order.date).toLocaleDateString()}</span>
+                      <span><strong>Total:</strong> ₹{parseFloat(order.total).toFixed(2)}</span>
+                    </div>
+                    <div className="order-items">
+                      {order.items && order.items.map((item, itemIndex) => (
+                        <div key={itemIndex} className="order-item-detail">
+                          <span>{item.name} (x{item.quantity})</span>
+                          <span>₹{parseFloat(item.price).toFixed(2)}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       )}
     </div>

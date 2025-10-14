@@ -198,7 +198,7 @@ function Checkout() {
                   checked={shippingMethod === 'express'}
                   onChange={(e) => setShippingMethod(e.target.value)}
                 />
-                Express Shipping ($9.99)
+                Express Shipping (₹829.17)
               </label>
             </div>
           </div>

@@ -7,4 +7,5 @@
 - [x] Remove required attribute from name and password fields in AdminLogin.jsx to prevent validation errors.
 - [x] Fix runtime error in Cart.jsx and CartContext.jsx by checking if item.price is a string before calling replace.
 - [x] Fix runtime error in Checkout.jsx by checking if item.price is a string before calling replace and update currency symbol to ₹.
-- [ ] Test the change by accessing /admin without login to ensure redirect to /admin-login.
+- [x] Test the change by accessing /admin without login to ensure redirect to /admin-login.
+- [x] Fix customer action button in CustomerManagement.jsx to show order history modal instead of alert.

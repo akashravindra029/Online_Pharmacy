@@ -67,7 +67,7 @@ function OrderHistory() {
                   <p>{order.shippingInfo.street}</p>
                   <p>{order.shippingInfo.city}, {order.shippingInfo.state} {order.shippingInfo.zip}</p>
                   <p>Phone: {order.shippingInfo.phone}</p>
-                  <p>Shipping Method: {order.shippingMethod === 'standard' ? 'Standard (Free)' : 'Express ($9.99)'}</p>
+                  <p>Shipping Method: {order.shippingMethod === 'standard' ? 'Standard (Free)' : 'Express (₹829.17)'}</p>
                 </div>
               )}
             </div>

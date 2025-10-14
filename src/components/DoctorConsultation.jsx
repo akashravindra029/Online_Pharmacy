@@ -26,37 +26,37 @@ function DoctorConsultation() {
 
   const doctors = {
     'General Medicine': [
-      { id: 1, name: 'Dr. Sarah Johnson', experience: '15 years', rating: 4.8, fee: '$50', available: ['09:00', '10:00', '14:00', '15:00'] },
-      { id: 2, name: 'Dr. Michael Chen', experience: '12 years', rating: 4.6, fee: '$45', available: ['11:00', '13:00', '16:00'] },
-      { id: 3, name: 'Dr. Emily Davis', experience: '10 years', rating: 4.7, fee: '$48', available: ['10:30', '12:00', '15:30'] }
+      { id: 1, name: 'Dr. Sarah Johnson', experience: '15 years', rating: 4.8, fee: '₹500.67', available: ['09:00', '10:00', '14:00', '15:00'] },
+      { id: 2, name: 'Dr. Michael Chen', experience: '12 years', rating: 4.6, fee: '₹600.17', available: ['11:00', '13:00', '16:00'] },
+      { id: 3, name: 'Dr. Emily Davis', experience: '10 years', rating: 4.7, fee: '₹1000.17', available: ['10:30', '12:00', '15:30'] }
     ],
     'Cardiology': [
-      { id: 4, name: 'Dr. Robert Wilson', experience: '20 years', rating: 4.9, fee: '$80', available: ['09:00', '11:00', '14:00'] },
-      { id: 5, name: 'Dr. Lisa Anderson', experience: '18 years', rating: 4.8, fee: '$75', available: ['10:00', '13:00', '16:00'] }
+      { id: 4, name: 'Dr. Robert Wilson', experience: '20 years', rating: 4.9, fee: '₹1000.17', available: ['09:00', '11:00', '14:00'] },
+      { id: 5, name: 'Dr. Lisa Anderson', experience: '18 years', rating: 4.8, fee: '₹1250.17', available: ['10:00', '13:00', '16:00'] }
     ],
     'Dermatology': [
-      { id: 6, name: 'Dr. Jennifer Lee', experience: '14 years', rating: 4.7, fee: '$60', available: ['09:30', '11:30', '14:30'] },
-      { id: 7, name: 'Dr. David Kumar', experience: '11 years', rating: 4.5, fee: '$55', available: ['10:30', '13:30', '15:30'] }
+      { id: 6, name: 'Dr. Jennifer Lee', experience: '14 years', rating: 4.7, fee: '₹2000.17', available: ['09:30', '11:30', '14:30'] },
+      { id: 7, name: 'Dr. David Kumar', experience: '11 years', rating: 4.5, fee: '₹1500.67', available: ['10:30', '13:30', '15:30'] }
     ],
     'Pediatrics': [
-      { id: 8, name: 'Dr. Maria Garcia', experience: '16 years', rating: 4.8, fee: '$55', available: ['09:00', '10:00', '11:00', '14:00'] },
-      { id: 9, name: 'Dr. James Brown', experience: '13 years', rating: 4.6, fee: '$50', available: ['12:00', '15:00', '16:00'] }
+      { id: 8, name: 'Dr. Maria Garcia', experience: '16 years', rating: 4.8, fee: '₹1000.67', available: ['09:00', '10:00', '11:00', '14:00'] },
+      { id: 9, name: 'Dr. James Brown', experience: '13 years', rating: 4.6, fee: '₹4141.67', available: ['12:00', '15:00', '16:00'] }
     ],
     'Orthopedics': [
-      { id: 10, name: 'Dr. Kevin Patel', experience: '17 years', rating: 4.7, fee: '$70', available: ['09:00', '11:00', '14:00'] },
-      { id: 11, name: 'Dr. Rachel Green', experience: '15 years', rating: 4.6, fee: '$65', available: ['10:00', '13:00', '16:00'] }
+      { id: 10, name: 'Dr. Kevin Patel', experience: '17 years', rating: 4.7, fee: '₹5807.67', available: ['09:00', '11:00', '14:00'] },
+      { id: 11, name: 'Dr. Rachel Green', experience: '15 years', rating: 4.6, fee: '₹5390.17', available: ['10:00', '13:00', '16:00'] },
     ],
     'Gynecology': [
-      { id: 12, name: 'Dr. Amanda White', experience: '19 years', rating: 4.8, fee: '$65', available: ['09:30', '11:30', '14:30'] },
-      { id: 13, name: 'Dr. Sophia Martinez', experience: '16 years', rating: 4.7, fee: '$60', available: ['10:30', '13:30', '15:30'] }
+      { id: 12, name: 'Dr. Amanda White', experience: '19 years', rating: 4.8, fee: '₹5390.17', available: ['09:30', '11:30', '14:30'] },
+      { id: 13, name: 'Dr. Sophia Martinez', experience: '16 years', rating: 4.7, fee: '₹4974.17', available: ['10:30', '13:30', '15:30'] },
     ],
     'Dentistry': [
-      { id: 14, name: 'Dr. Thomas Taylor', experience: '12 years', rating: 4.5, fee: '$40', available: ['09:00', '10:00', '11:00', '14:00'] },
-      { id: 15, name: 'Dr. Olivia Johnson', experience: '10 years', rating: 4.4, fee: '$38', available: ['12:00', '15:00', '16:00'] }
+      { id: 14, name: 'Dr. Thomas Taylor', experience: '12 years', rating: 4.5, fee: '₹3314.17', available: ['09:00', '10:00', '11:00', '14:00'] },
+      { id: 15, name: 'Dr. Olivia Johnson', experience: '10 years', rating: 4.4, fee: '₹3147.67', available: ['12:00', '15:00', '16:00'] },
     ],
     'Psychiatry': [
-      { id: 16, name: 'Dr. William Davis', experience: '22 years', rating: 4.9, fee: '$90', available: ['10:00', '13:00', '16:00'] },
-      { id: 17, name: 'Dr. Emma Wilson', experience: '18 years', rating: 4.7, fee: '$85', available: ['09:00', '11:00', '14:00'] }
+      { id: 16, name: 'Dr. William Davis', experience: '22 years', rating: 4.9, fee: '₹7457.67', available: ['10:00', '13:00', '16:00'] },
+      { id: 17, name: 'Dr. Emma Wilson', experience: '18 years', rating: 4.7, fee: '₹7040.17', available: ['09:00', '11:00', '14:00'] }
     ]
   };
 

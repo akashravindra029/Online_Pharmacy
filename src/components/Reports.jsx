@@ -35,14 +35,14 @@ function Reports() {
 
     filteredOrders.forEach(order => {
       const date = new Date(order.date).toISOString().split('T')[0];
-      dailySales[date] = (dailySales[date] || 0) + (order.total || 0);
+      dailySales[date] = (dailySales[date] || 0) + (parseFloat(order.total) || 0);
 
       order.items?.forEach(item => {
         productSales[item.name] = (productSales[item.name] || 0) + item.quantity;
 
         const product = products.find(p => p.name === item.name);
         if (product) {
-          categorySales[product.category] = (categorySales[product.category] || 0) + (item.price * item.quantity);
+          categorySales[product.category] = (categorySales[product.category] || 0) + (parseFloat(item.price) * parseFloat(item.quantity));
         }
       });
     });
@@ -51,13 +51,13 @@ function Reports() {
   };
 
   const generateInventoryReport = () => {
-    const lowStock = products.filter(p => p.stock <= 20);
-    const outOfStock = products.filter(p => p.stock === 0);
-    const totalValue = products.reduce((sum, p) => sum + (p.price * p.stock), 0);
+    const lowStock = products.filter(p => parseInt(p.stock) <= 20);
+    const outOfStock = products.filter(p => parseInt(p.stock) === 0);
+    const totalValue = products.reduce((sum, p) => sum + (parseFloat(p.price) * parseInt(p.stock)), 0);
 
     const categoryInventory = {};
     products.forEach(product => {
-      categoryInventory[product.category] = (categoryInventory[product.category] || 0) + product.stock;
+      categoryInventory[product.category] = (categoryInventory[product.category] || 0) + parseInt(product.stock);
     });
 
     return { lowStock, outOfStock, totalValue, categoryInventory };
