@@ -1,9 +1,10 @@
-# TODO: Remove "What Our Customers Say" Section from Home Page
+# TODO for Enhancing Medicines.jsx
 
-- [x] Edit frntend_pharmacy-main/src/App.js to remove the `<Testimonials />` component from the home page route (path="/").
-- [ ] Verify that the Testimonials section is no longer displayed on the home page.
-
-# TODO: Remove "Stay Healthy with Latest Updates" Section from Home Page
-
-- [x] Edit frntend_pharmacy-main/src/App.js to remove the `<Newsletter />` component from the home page route (path="/").
-- [ ] Verify that the Newsletter section is no longer displayed on the home page.
+- [x] Update Medicines.jsx to include all medicines data
+- [x] Add state for search term, selected category filter, sort option (removed price range)
+- [x] Implement search functionality across medicine name, description, brand
+- [x] Implement category filter dropdown (no "All" option)
+- [x] Implement sorting by name or price
+- [x] Display filtered and sorted medicines in grid
+- [x] Update Medicines.css for enhanced UI: hover effects, animations, responsive design
+- [ ] Test the changes by running the app
