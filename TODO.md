@@ -1,11 +1,20 @@
-- [x] Update Admin.jsx to allow any logged-in user access to the admin panel by changing the access check condition.
-- [x] Add 'admin' as an alternative email for admin login in Login.jsx.
-- [x] Change Admin.jsx to redirect to /login instead of showing access denied message when not admin.
-- [x] Create a separate AdminLogin component for admin sign-in.
-- [x] Add /admin-login route to App.js.
-- [x] Update Admin.jsx to redirect to /admin-login when not admin.
-- [x] Remove required attribute from name and password fields in AdminLogin.jsx to prevent validation errors.
-- [x] Fix runtime error in Cart.jsx and CartContext.jsx by checking if item.price is a string before calling replace.
-- [x] Fix runtime error in Checkout.jsx by checking if item.price is a string before calling replace and update currency symbol to ₹.
-- [x] Test the change by accessing /admin without login to ensure redirect to /admin-login.
-- [x] Fix customer action button in CustomerManagement.jsx to show order history modal instead of alert.
+# TODO: Convert Admin Dashboard Prices to Indian Rupees
+
+## Tasks
+- [x] Update ProductManagement.jsx to display prices with ₹ instead of $
+- [x] Update OrderManagement.jsx to display revenues and totals with ₹ instead of $
+- [x] Update Reports.jsx to display all monetary values with ₹ instead of $
+- [ ] Update Settings.jsx default currency to INR
+- [ ] Verify all admin dashboard pages display prices in INR
+
+## Files to Edit
+- frntend_pharmacy-main/src/components/ProductManagement.jsx
+- frntend_pharmacy-main/src/components/OrderManagement.jsx
+- frntend_pharmacy-main/src/components/Reports.jsx
+- frntend_pharmacy-main/src/components/Settings.jsx
+
+## Notes
+- InventoryManagement.jsx and RevenueAnalytics.jsx already use ₹
+- Ensure consistency across all admin pages
+- Default currency in settings should be INR
+- Plan approved by user, proceeding with changes

@@ -83,7 +83,7 @@ function Reports() {
         <div className="report-summary">
           <div className="summary-item">
             <h3>Total Revenue</h3>
-            <p>${totalRevenue.toFixed(2)}</p>
+            <p>₹{totalRevenue.toFixed(2)}</p>
           </div>
           <div className="summary-item">
             <h3>Total Orders</h3>
@@ -91,7 +91,7 @@ function Reports() {
           </div>
           <div className="summary-item">
             <h3>Average Order Value</h3>
-            <p>${totalOrders > 0 ? (totalRevenue / totalOrders).toFixed(2) : '0.00'}</p>
+            <p>₹{totalOrders > 0 ? (totalRevenue / totalOrders).toFixed(2) : '0.00'}</p>
           </div>
         </div>
 
@@ -103,7 +103,7 @@ function Reports() {
               .map(([date, revenue]) => (
                 <div key={date} className="data-item">
                   <span>{date}</span>
-                  <span>${revenue.toFixed(2)}</span>
+                  <span>₹{revenue.toFixed(2)}</span>
                 </div>
               ))}
           </div>
@@ -132,7 +132,7 @@ function Reports() {
               .map(([category, revenue]) => (
                 <div key={category} className="data-item">
                   <span>{category}</span>
-                  <span>${revenue.toFixed(2)}</span>
+                  <span>₹{revenue.toFixed(2)}</span>
                 </div>
               ))}
           </div>
@@ -156,7 +156,7 @@ function Reports() {
         <div className="report-summary">
           <div className="summary-item">
             <h3>Total Inventory Value</h3>
-            <p>${totalValue.toFixed(2)}</p>
+            <p>₹{totalValue.toFixed(2)}</p>
           </div>
           <div className="summary-item">
             <h3>Low Stock Items</h3>

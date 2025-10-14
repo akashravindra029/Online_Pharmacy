@@ -88,7 +88,7 @@ function OrderManagement() {
           </div>
           <div className="stat-card">
             <span className="stat-label">Total Revenue</span>
-            <span className="stat-value">${getTotalRevenue().toFixed(2)}</span>
+            <span className="stat-value">₹{getTotalRevenue().toFixed(2)}</span>
           </div>
           <div className="stat-card">
             <span className="stat-label">Pending</span>
@@ -148,7 +148,7 @@ function OrderManagement() {
                 </td>
                 <td>{new Date(order.date).toLocaleDateString()}</td>
                 <td>{order.items?.length || 0} items</td>
-                <td>${(parseFloat(order.total) || 0).toFixed(2)}</td>
+                <td>₹{(parseFloat(order.total) || 0).toFixed(2)}</td>
                 <td>
                   <span
                     className="status-badge"

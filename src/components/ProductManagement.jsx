@@ -217,7 +217,7 @@ function ProductManagement() {
                 <td>{product.name}</td>
                 <td>{product.brand}</td>
                 <td>{product.category}</td>
-                <td>${product.price.toFixed(2)}</td>
+                <td>₹{product.price.toFixed(2)}</td>
                 <td>{product.stock}</td>
                 <td>
                   <button onClick={() => handleEditProduct(product)} className="edit-btn">Edit</button>
