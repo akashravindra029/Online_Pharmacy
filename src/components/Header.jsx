@@ -5,7 +5,8 @@ import { useCart } from "../contexts/CartContext";
 import "../styles/Header.css";
 
 function Header() {
-  const { user, logout, isAuthenticated } = useAuth();
+  // eslint-disable-next-line no-unused-vars
+  const { user, logout, isAuthenticated, isAdmin } = useAuth();
   const { getTotalItems } = useCart();
 
   return (

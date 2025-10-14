@@ -43,7 +43,7 @@ function Cart() {
                 <p className="details">
                   {item.strength} • {item.packSize}
                 </p>
-                <p className="price">${parseFloat(item.price.replace('$', ''))}</p>
+                <p className="price">₹{parseFloat(typeof item.price === 'string' ? item.price.replace('₹', '') : item.price)}</p>
               </div>
 
               <div className="quantity-controls">
@@ -63,7 +63,7 @@ function Cart() {
               </div>
 
               <div className="item-total">
-                <p>${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}</p>
+                <p>₹{(parseFloat(typeof item.price === 'string' ? item.price.replace('₹', '') : item.price) * item.quantity).toFixed(2)}</p>
                 <button
                   onClick={() => removeFromCart(item.name)}
                   className="remove-btn"
@@ -78,7 +78,7 @@ function Cart() {
         <div className="cart-summary">
           <div className="summary-row">
             <span>Subtotal ({getTotalItems()} items):</span>
-            <span>${getTotalPrice()}</span>
+            <span>₹{getTotalPrice()}</span>
           </div>
           <div className="summary-row">
             <span>Shipping:</span>
@@ -86,7 +86,7 @@ function Cart() {
           </div>
           <div className="summary-row total">
             <span>Total:</span>
-            <span>${getTotalPrice()}</span>
+            <span>₹{getTotalPrice()}</span>
           </div>
 
           <div className="cart-actions">

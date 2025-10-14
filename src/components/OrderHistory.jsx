@@ -55,7 +55,7 @@ function OrderHistory() {
                       <p>Quantity: {item.quantity}</p>
                     </div>
                     <div className="item-price">
-                      ${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}
+                      ₹{(parseFloat(typeof item.price === 'string' ? item.price.replace('₹', '') : item.price) * item.quantity).toFixed(2)}
                     </div>
                   </div>
                 ))}

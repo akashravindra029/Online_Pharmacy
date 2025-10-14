@@ -1,0 +1,134 @@
+.inventory-management {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 1rem;
+}
+
+.header h2 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+}
+
+.summary {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.summary-item .label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+}
+
+.summary-item .value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.threshold-setting {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.threshold-setting label {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.threshold-setting input {
+  padding: 0.5rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  width: 80px;
+}
+
+.low-stock-alert {
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 4px;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.low-stock-alert h3 {
+  color: #856404;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.low-stock-alert ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.low-stock-alert li {
+  color: #856404;
+  margin-bottom: 0.5rem;
+}
+
+.inventory-table {
+  overflow-x: auto;
+}
+
+.inventory-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.inventory-table th,
+.inventory-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.inventory-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.inventory-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.inventory-table tr.low-stock {
+  background-color: #fff3cd;
+}
+
+.inventory-table tr.low-stock:hover {
+  background-color: #ffeaa7;
+}
+
+.stock-input {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 3px;
+  width: 80px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.stock-input:focus {
+  outline: none;
+  border-color: #3498db;
+}

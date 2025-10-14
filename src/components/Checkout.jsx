@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useCart } from '../contexts/CartContext';
+import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Checkout.css';
 
 function Checkout() {
   const { cart, getTotalPrice, clearCart } = useCart();
+  const { user } = useAuth();
   const navigate = useNavigate();
 
   const [shippingInfo, setShippingInfo] = useState({
@@ -42,7 +44,10 @@ function Checkout() {
       shippingInfo,
       shippingMethod,
       total: getTotalPrice(),
-      date: new Date().toISOString()
+      date: new Date().toISOString(),
+      customerName: user?.name || shippingInfo.name,
+      customerEmail: user?.email || '',
+      customerPhone: shippingInfo.phone
     };
 
     // Save order to localStorage (in a real app, this would be sent to backend)
@@ -87,13 +92,13 @@ function Checkout() {
                   <p>Quantity: {item.quantity}</p>
                 </div>
                 <div className="item-price">
-                  ${(parseFloat(item.price.replace('$', '')) * item.quantity).toFixed(2)}
+                  ₹{(parseFloat(typeof item.price === 'string' ? item.price.replace('₹', '') : item.price) * item.quantity).toFixed(2)}
                 </div>
               </div>
             ))}
           </div>
           <div className="order-total">
-            <p>Total: ${getTotalPrice()}</p>
+            <p>Total: ₹{getTotalPrice()}</p>
           </div>
         </div>
 

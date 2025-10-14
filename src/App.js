@@ -22,11 +22,20 @@ import Medicines from "./components/Medicines";
 import LabTests from "./components/LabTests";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import AdminLogin from "./components/AdminLogin";
 import Profile from "./components/Profile";
 import DoctorConsultation from "./components/DoctorConsultation";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import OrderHistory from "./components/OrderHistory";
+import Admin from "./components/Admin";
+import ProductManagement from "./components/ProductManagement";
+import InventoryManagement from "./components/InventoryManagement";
+import RevenueAnalytics from "./components/RevenueAnalytics";
+import OrderManagement from "./components/OrderManagement";
+import CustomerManagement from "./components/CustomerManagement";
+import Reports from "./components/Reports";
+import Settings from "./components/Settings";
 
 function App() {
   return (
@@ -102,6 +111,7 @@ function App() {
             </div>
           } />
           <Route path="/login" element={<Login />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/consultation" element={
@@ -132,6 +142,19 @@ function App() {
               <Footer />
             </div>
           } />
+          <Route path="/admin" element={<Admin />}>
+            <Route index element={<div className="admin-dashboard">
+              <h2>Admin Dashboard</h2>
+              <p>Welcome to the admin panel. Use the navigation above to manage your pharmacy operations.</p>
+            </div>} />
+            <Route path="products" element={<ProductManagement />} />
+            <Route path="inventory" element={<InventoryManagement />} />
+            <Route path="orders" element={<OrderManagement />} />
+            <Route path="customers" element={<CustomerManagement />} />
+            <Route path="revenue" element={<RevenueAnalytics />} />
+            <Route path="reports" element={<Reports />} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
         </Routes>
         </BrowserRouter>
       </CartProvider>

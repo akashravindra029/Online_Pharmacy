@@ -64,7 +64,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const getTotalPrice = () => {
-    return cart.reduce((total, item) => total + (parseFloat(item.price.replace('$', '')) * item.quantity), 0).toFixed(2);
+    return cart.reduce((total, item) => total + (parseFloat(typeof item.price === 'string' ? item.price.replace('₹', '') : item.price) * item.quantity), 0).toFixed(2);
   };
 
   const value = {

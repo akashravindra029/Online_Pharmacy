@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import '../styles/Login.css';
 
-function Login() {
+function AdminLogin() {
   const { login } = useAuth();
   const [formData, setFormData] = useState({
     name: '',
@@ -27,25 +27,31 @@ function Login() {
 
     // Simulate API call
     setTimeout(() => {
-      // Mock successful login
-      const role = formData.email === 'admin@pharmacy.com' || formData.email === 'admin' ? 'admin' : 'user';
-      const userData = {
-        email: formData.email,
-        name: formData.name,
-        id: '12345',
-        role: role
-      };
-      login(userData);
-      setLoading(false);
-      alert('Login successful!');
-      navigate('/');
+      // Mock successful login - only allow admin login here
+      const role = formData.email === 'admin@pharmacy.com' || formData.email === 'admin' ? 'admin' : null;
+      if (role === 'admin') {
+        const userData = {
+          email: formData.email,
+          name: formData.name,
+          id: '12345',
+          role: role
+        };
+        login(userData);
+        setLoading(false);
+        alert('Admin login successful!');
+        navigate('/admin');
+      } else {
+        setLoading(false);
+        alert('Invalid admin credentials. Please use admin email.');
+      }
     }, 1500);
   };
 
   return (
     <div className="login-container fade-in">
       <div className="login-form">
-        <h2>Login to Your Account</h2>
+        <h2>Admin Sign In</h2>
+        <p>Enter your admin credentials to access the admin panel.</p>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="name">Full Name</label>
@@ -55,12 +61,11 @@ function Login() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              required
               placeholder="Enter your full name"
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">Admin Email</label>
             <input
               type="email"
               id="email"
@@ -68,7 +73,7 @@ function Login() {
               value={formData.email}
               onChange={handleChange}
               required
-              placeholder="Enter your email"
+              placeholder="Enter admin email (e.g., admin)"
             />
           </div>
           <div className="form-group">
@@ -79,20 +84,19 @@ function Login() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              required
               placeholder="Enter your password"
             />
           </div>
           <button type="submit" className="login-btn" disabled={loading}>
-            {loading ? 'Logging in...' : 'Login'}
+            {loading ? 'Signing in...' : 'Sign In as Admin'}
           </button>
         </form>
         <p className="register-link">
-          Don't have an account? <a href="/register">Register here</a>
+          Not an admin? <a href="/">Go back to home</a>
         </p>
       </div>
     </div>
   );
 }
 
-export default Login;
+export default AdminLogin;

@@ -1,10 +1,10 @@
-# TODO for Enhancing Medicines.jsx
-
-- [x] Update Medicines.jsx to include all medicines data
-- [x] Add state for search term, selected category filter, sort option (removed price range)
-- [x] Implement search functionality across medicine name, description, brand
-- [x] Implement category filter dropdown (no "All" option)
-- [x] Implement sorting by name or price
-- [x] Display filtered and sorted medicines in grid
-- [x] Update Medicines.css for enhanced UI: hover effects, animations, responsive design
-- [ ] Test the changes by running the app
+- [x] Update Admin.jsx to allow any logged-in user access to the admin panel by changing the access check condition.
+- [x] Add 'admin' as an alternative email for admin login in Login.jsx.
+- [x] Change Admin.jsx to redirect to /login instead of showing access denied message when not admin.
+- [x] Create a separate AdminLogin component for admin sign-in.
+- [x] Add /admin-login route to App.js.
+- [x] Update Admin.jsx to redirect to /admin-login when not admin.
+- [x] Remove required attribute from name and password fields in AdminLogin.jsx to prevent validation errors.
+- [x] Fix runtime error in Cart.jsx and CartContext.jsx by checking if item.price is a string before calling replace.
+- [x] Fix runtime error in Checkout.jsx by checking if item.price is a string before calling replace and update currency symbol to ₹.
+- [ ] Test the change by accessing /admin without login to ensure redirect to /admin-login.

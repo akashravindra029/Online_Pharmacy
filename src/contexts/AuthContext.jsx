@@ -29,11 +29,16 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem('user');
   };
 
+  const isAdmin = () => {
+    return user && user.role === 'admin';
+  };
+
   const value = {
     user,
     login,
     logout,
-    isAuthenticated: !!user
+    isAuthenticated: !!user,
+    isAdmin
   };
 
   return (

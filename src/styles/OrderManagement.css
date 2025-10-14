@@ -1,0 +1,142 @@
+.order-management {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ecf0f1;
+  padding-bottom: 1rem;
+}
+
+.header h2 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  min-width: 120px;
+}
+
+.stat-card .stat-label {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card .stat-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.search-input {
+  padding: 0.5rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  width: 300px;
+  font-size: 0.9rem;
+}
+
+.status-filter {
+  padding: 0.5rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.orders-table {
+  overflow-x: auto;
+}
+
+.orders-table table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.orders-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.orders-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.customer-info {
+  font-size: 0.9rem;
+}
+
+.customer-name {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.customer-email {
+  color: #7f8c8d;
+}
+
+.status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.status-select {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  background-color: white;
+}
+
+.status-select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.no-orders {
+  text-align: center;
+  padding: 3rem;
+  color: #7f8c8d;
+}
+
+.no-orders p {
+  font-size: 1.1rem;
+  margin: 0;
+}

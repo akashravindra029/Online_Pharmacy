@@ -1,0 +1,125 @@
+.revenue-analytics {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.revenue-analytics h2 {
+  margin-top: 0;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.revenue-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.summary-card {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  border-left: 4px solid #3498db;
+}
+
+.summary-card h3 {
+  margin: 0 0 1rem 0;
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.revenue-amount {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #27ae60;
+  margin: 0;
+}
+
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.chart-section {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.chart-section h3 {
+  margin-top: 0;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.revenue-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.revenue-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.revenue-item:last-child {
+  border-bottom: none;
+}
+
+.revenue-item .date {
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.revenue-item .amount {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.recent-orders {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.recent-orders h3 {
+  margin-top: 0;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.orders-table {
+  overflow-x: auto;
+}
+
+.orders-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.orders-table th {
+  background-color: #e9ecef;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.orders-table tr:hover {
+  background-color: #f8f9fa;
+}
