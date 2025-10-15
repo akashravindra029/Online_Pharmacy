@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/FAQs.css";
 
 function FAQs() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   const faqs = [
     {
       question: "How do I place an order?",
@@ -25,16 +27,32 @@ function FAQs() {
     }
   ];
 
+  const toggleFAQ = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
   return (
     <div className="faqs">
-      <h2>Frequently Asked Questions</h2>
-      <div className="faqs-list">
-        {faqs.map((faq, index) => (
-          <div className="faq-item" key={index}>
-            <h3>{faq.question}</h3>
-            <p>{faq.answer}</p>
-          </div>
-        ))}
+      <div className="faqs-hero">
+        <div className="hero-overlay">
+          <h1>Frequently Asked Questions</h1>
+          <p>Find answers to common questions about our services and products.</p>
+        </div>
+      </div>
+      <div className="faqs-content">
+        <div className="faqs-list">
+          {faqs.map((faq, index) => (
+            <div className="faq-item" key={index}>
+              <div className="faq-question" onClick={() => toggleFAQ(index)}>
+                <h3>{faq.question}</h3>
+                <span className={`faq-icon ${activeIndex === index ? 'active' : ''}`}>+</span>
+              </div>
+              <div className={`faq-answer ${activeIndex === index ? 'active' : ''}`}>
+                <p>{faq.answer}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
