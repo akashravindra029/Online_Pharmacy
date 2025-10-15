@@ -6,40 +6,45 @@ import '../styles/Login.css';
 function Login() {
   const { login } = useAuth();
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
     password: ''
   });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
+  // handle login form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      // Mock successful login
-      const role = formData.email === 'admin@pharmacy.com' || formData.email === 'admin' ? 'admin' : 'user';
-      const userData = {
-        email: formData.email,
-        name: formData.name,
-        id: '12345',
-        role: role
-      };
-      login(userData);
-      setLoading(false);
-      alert('Login successful!');
+    try {
+      const response = await fetch('http://localhost:8080/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || data);
+      }
+
+      alert('✅ Login successful!');
+      login(data);
       navigate('/');
-    }, 1500);
+
+    } catch (error) {
+      alert('❌ Login failed: ' + error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -47,18 +52,6 @@ function Login() {
       <div className="login-form">
         <h2>Login to Your Account</h2>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="name">Full Name</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              placeholder="Enter your full name"
-            />
-          </div>
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
@@ -71,6 +64,7 @@ function Login() {
               placeholder="Enter your email"
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="password">Password</label>
             <input
@@ -83,12 +77,14 @@ function Login() {
               placeholder="Enter your password"
             />
           </div>
+
           <button type="submit" className="login-btn" disabled={loading}>
             {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
+
         <p className="register-link">
-          Don't have an account? <a href="/register">Register here</a>
+          Don’t have an account? <a href="/register">Register here</a>
         </p>
       </div>
     </div>

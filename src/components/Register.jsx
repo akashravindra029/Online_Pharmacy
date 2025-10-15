@@ -15,38 +15,50 @@ function Register() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  // handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
+  // submit registration form
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      alert('Passwords do not match!');
+      alert('⚠️ Passwords do not match!');
       return;
     }
 
     setLoading(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      // Mock successful registration
-      const userData = {
-        email: formData.email,
-        name: formData.name,
-        phone: formData.phone,
-        id: '12345'
-      };
-      login(userData);
-      setLoading(false);
-      alert('Registration successful!');
+    try {
+      const response = await fetch('http://localhost:8080/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          password: formData.password,
+          phone: formData.phone
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || data);
+      }
+
+      alert('✅ Registration successful!');
+      login(data); // Save user data in AuthContext
       navigate('/');
-    }, 1500);
+
+    } catch (error) {
+      alert('❌ Registration failed: ' + error.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -66,6 +78,7 @@ function Register() {
               placeholder="Enter your full name"
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
@@ -78,6 +91,7 @@ function Register() {
               placeholder="Enter your email"
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="phone">Phone Number</label>
             <input
@@ -90,6 +104,7 @@ function Register() {
               placeholder="Enter your phone number"
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="password">Password</label>
             <input
@@ -102,6 +117,7 @@ function Register() {
               placeholder="Create a password"
             />
           </div>
+
           <div className="form-group">
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input
@@ -114,10 +130,12 @@ function Register() {
               placeholder="Confirm your password"
             />
           </div>
+
           <button type="submit" className="register-btn" disabled={loading}>
             {loading ? 'Creating Account...' : 'Register'}
           </button>
         </form>
+
         <p className="login-link">
           Already have an account? <a href="/login">Login here</a>
         </p>

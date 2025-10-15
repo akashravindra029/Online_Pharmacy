@@ -31,6 +31,7 @@ function Hero() {
           <p>Get quality medicines, expert advice, and fast delivery. Shop with confidence from licensed pharmacists.</p>
           <div className="buttons-container">
             <Link to="/medicines" className="btn btn-primary">Shop Now</Link>
+            <Link to="/patient-form" className="btn btn-secondary">Patient Form</Link>
           </div>
         </div>
         <div className="hero-image">
