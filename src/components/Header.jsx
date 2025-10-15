@@ -18,11 +18,7 @@ function Header() {
         <Link to="/"><button>🏠 Home</button></Link>
         <Link to="/prescription"><button>📄 Prescription</button></Link>
         <Link to="/medicines"><button>💊 Medicines</button></Link>
-        <Link to="/lab-tests"><button>🧪 Lab Tests</button></Link>
-        <Link to="/consultation"><button>👨‍⚕️ Consultation</button></Link>
-        <Link to="/payment-offers"><button>💳 Payment Offers</button></Link>
         <Link to="/about-us"><button>ℹ️ About Us</button></Link>
-        <Link to="/faqs"><button>❓ FAQs</button></Link>
       </nav>
       <div className="header-actions">
         <Link to="/cart" className="cart-link">

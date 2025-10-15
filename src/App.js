@@ -8,7 +8,6 @@ import Hero from "./components/Hero";
 import FeaturedProducts from "./components/FeaturedProducts";
 import Categories from "./components/Categories";
 import Advertisement from "./components/Advertisement";
-import PaymentOffers from "./components/PaymentOffers";
 
 
 
@@ -19,12 +18,10 @@ import FAQs from "./components/FAQs";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import PatientForm from "./components/PatientForm";
 import Medicines from "./components/Medicines";
-import LabTests from "./components/LabTests";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import AdminLogin from "./components/AdminLogin";
 import Profile from "./components/Profile";
-import DoctorConsultation from "./components/DoctorConsultation";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import OrderHistory from "./components/OrderHistory";
@@ -50,7 +47,6 @@ function App() {
               <FeaturedProducts />
               <Categories />
               <Advertisement />
-              <PaymentOffers />
               <Footer />
             </div>
           } />
@@ -65,20 +61,6 @@ function App() {
             <div className="App">
               <Header />
               <Medicines />
-              <Footer />
-            </div>
-          } />
-          <Route path="/lab-tests" element={
-            <div className="App">
-              <Header />
-              <LabTests />
-              <Footer />
-            </div>
-          } />
-          <Route path="/payment-offers" element={
-            <div className="App">
-              <Header />
-              <PaymentOffers />
               <Footer />
             </div>
           } />
@@ -114,13 +96,6 @@ function App() {
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/consultation" element={
-            <div className="App">
-              <Header />
-              <DoctorConsultation />
-              <Footer />
-            </div>
-          } />
           <Route path="/cart" element={
             <div className="App">
               <Header />
