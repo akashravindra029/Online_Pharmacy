@@ -18,6 +18,7 @@ import Medicines from "./components/Medicines";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import AdminLogin from "./components/AdminLogin";
+import AdminRegister from "./components/AdminRegister";
 import Profile from "./components/Profile";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
@@ -91,6 +92,7 @@ function App() {
           } />
           <Route path="/login" element={<Login />} />
           <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/admin-register" element={<AdminRegister />} />
           <Route path="/register" element={<Register />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={

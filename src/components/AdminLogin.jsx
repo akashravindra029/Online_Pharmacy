@@ -27,14 +27,16 @@ function AdminLogin() {
 
     // Simulate API call
     setTimeout(() => {
-      // Mock successful login - only allow admin login here
-      const role = formData.email === 'admin@pharmacy.com' || formData.email === 'admin' ? 'admin' : null;
-      if (role === 'admin') {
+      // Check against stored admin data
+      const admins = JSON.parse(localStorage.getItem('admins')) || [];
+      const admin = admins.find(a => a.email === formData.email && a.password === formData.password);
+
+      if (admin) {
         const userData = {
-          email: formData.email,
-          name: formData.name,
-          id: '12345',
-          role: role
+          email: admin.email,
+          name: admin.name,
+          id: admin.id,
+          role: admin.role
         };
         login(userData);
         setLoading(false);
@@ -92,7 +94,7 @@ function AdminLogin() {
           </button>
         </form>
         <p className="register-link">
-          Not an admin? <a href="/">Go back to home</a>
+          Don't have an admin account? <a href="/admin-register">Register here</a>
         </p>
       </div>
     </div>
