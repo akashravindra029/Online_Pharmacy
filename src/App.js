@@ -8,9 +8,6 @@ import Hero from "./components/Hero";
 import FeaturedProducts from "./components/FeaturedProducts";
 import Categories from "./components/Categories";
 import Advertisement from "./components/Advertisement";
-
-
-
 import Footer from "./components/Footer";
 import Prescription from "./components/Prescription";
 import AboutUs from "./components/AboutUs";
