@@ -1,3 +1,6 @@
-# TODO List for Making PatientForm Accessible on Home Page
+# TODO: Add Product Page URL Feature
 
-- [x] Edit frntend_pharmacy-main/src/components/Hero.jsx to add a new button next to "Shop Now" that links to '/patient-form', labeled "Patient Form".
+- [ ] Update ProductManagement.jsx: Add 'url' field to formData and default products
+- [ ] Update ProductManagement.jsx: Add URL input in add/edit forms
+- [ ] Update Medicines.jsx: Make product cards link to URL if present
+- [ ] Test the feature: Add product with URL in admin, check visibility in Medicines.jsx
